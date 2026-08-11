@@ -3,7 +3,7 @@
 resources:
   pipelines:
     ageas_interview_etl:
-      name: ageas_interview_etl
+      name: ageas_json_load_etl
       catalog: ${var.catalog}
       schema: ${var.schema}
       serverless: true
