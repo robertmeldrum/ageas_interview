@@ -76,7 +76,7 @@ def fact_policy():
     df_with_joined_fks = (
         df.join(dim_policy, F.col("policy_id") == F.col("bk_policy_id"), "left")
         .join(dim_customer, df.customer_id == F.col("bk_customer_detail_id"), "left")  
-        .withColumn(F.lit(1).alias("count")) 
+        .withColumn("count", F.lit(1)) 
         .select(
             "sk_policy_detail_id"
             "sk_customer_detail_id"
