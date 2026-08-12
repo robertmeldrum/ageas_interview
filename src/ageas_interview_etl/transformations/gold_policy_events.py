@@ -88,7 +88,7 @@ def fact_policy():
     )
     
     df_policy_fact = (
-        df_with_joined_fks.groupBy("policy_id")
+        df_with_joined_fks.groupBy("policy_id", "sk_policy_detail_id", "sk_customer_detail_id")
         .agg(
             F.first("premium_amount").alias("premium_amount"),
             F.first("coverage_amount").alias("coverage_amount"),
