@@ -80,7 +80,7 @@ def fact_policy():
             F.lit(1).alias("count"),
         )
         .join(dim_policy, F.col("policy_id") == F.col("bk_policy_id"), "left")
-        .join(dim_customer, F.col("customer_id") == F.col("bk_customer_detail_id"), "left")
+        .join(dim_customer, df.customer_id == F.col("bk_customer_detail_id"), "left")
         .select(
             F.monotonically_increasing_id().alias("sk_policy_id"),
             "sk_policy_detail_id",
@@ -102,7 +102,7 @@ def fact_event():
 
     event_fact = (
         df.join(dim_policy, F.col("policy_id") == F.col("bk_policy_id"), "left")
-        .join(dim_customer, F.col("customer_id") == F.col("bk_customer_detail_id"), "left")
+        .join(dim_customer, df.customer_id == F.col("bk_customer_detail_id"), "left")
         .withColumn("event_count", F.lit(1))
         .select(
             F.monotonically_increasing_id().alias("sk_event_id"),
