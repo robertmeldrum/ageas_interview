@@ -40,7 +40,7 @@ def policy_event():
     # Fix the invalid JSON in the policy_type field by replacing single quotes with double quotes
     valid_json_df = invalid_json_df.withColumn(
         "policy_type",
-        regexp_replace(F.col("policy_type"), "'", "\"")
+        F.regexp_replace(F.col("policy_type"), "'", "\"")
     )
 
     # Replace policy_type string with a valid JSON object
