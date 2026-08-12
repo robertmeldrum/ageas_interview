@@ -4,7 +4,7 @@ Date: 2026-08-12
 
 Description:
 Silver Layer: Policy Event Transformations
-This module reads policy event data from bronze.policy_event and applies
+This module reads policy event data from bronze_policy_event and applies
 silver-level formatting and enrichment.
 """
 
@@ -16,7 +16,7 @@ from pyspark import pipelines as dp
 def policy_event():
     """
     Description:
-    Read bronze.policy_event and apply silver-layer transformations.
+    Read bronze_policy_event and apply silver-layer transformations.
 
     Returns:
     DataFrame: Policy events with cleaned text fields, decimal amounts,

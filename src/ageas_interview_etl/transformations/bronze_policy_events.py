@@ -34,8 +34,8 @@ def policy_event():
     #  Load JSON files with Autoloader to automaticly pick up new files and keep track of shcema changes
     invalid_json_df  = spark.readStream.format("cloudFiles") \
         .option("cloudFiles.format", "json") \
-        .option("cloudFiles.schemaLocation", "/Volumes/ageas/bronze/schema") \
-        .load("/Volumes/ageas/bronze/files")
+        .option("cloudFiles.schemaLocation", "/Volumes/ageas/ageas/schema") \
+        .load("/Volumes/ageas/ageas/files")
     
     # Fix the invalid JSON in the policy_type field by replacing single quotes with double quotes and none with null
     valid_json_df = invalid_json_df.withColumn(
