@@ -13,7 +13,7 @@ from pyspark.sql import functions as F
 from pyspark import pipelines as dp
 
 
-@dp.table
+@dp.table(name="bronze.policy_event") 
 def policy_event():
     
     """
@@ -37,10 +37,14 @@ def policy_event():
         .option("cloudFiles.schemaLocation", "/Volumes/ageas/bronze/schema") \
         .load("/Volumes/ageas/bronze/files")
     
-    # Fix the invalid JSON in the policy_type field by replacing single quotes with double quotes
+    # Fix the invalid JSON in the policy_type field by replacing single quotes with double quotes and none with null
     valid_json_df = invalid_json_df.withColumn(
         "policy_type",
-        F.regexp_replace(F.col("policy_type"), "'", "\"")
+        F.regexp_replace(  
+            F.regexp_replace(F.col("policy_type"), "'", "\""),
+            "None", 
+            "\"null\""
+        )
     )
 
     # Replace policy_type string with a valid JSON object
