@@ -30,8 +30,8 @@ def policy_event():
         "policy_type",
         F.when(F.lower(F.col("policy_type")) == "null", None).otherwise(F.col("policy_type")),
     ).withColumn(
-        "policy_band",
-        F.when(F.lower(F.col("policy_band")) == "null", None).otherwise(F.col("policy_band")),
+        "policy_brand",
+        F.when(F.lower(F.col("policy_brand")) == "null", None).otherwise(F.col("policy_brand")),
     ).withColumn(
         "coverage_amount",
         F.col("coverage_amount").cast("decimal(18,2)"),
