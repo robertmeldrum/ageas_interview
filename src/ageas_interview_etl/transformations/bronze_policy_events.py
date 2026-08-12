@@ -13,7 +13,7 @@ from pyspark.sql import functions as F
 from pyspark import pipelines as dp
 
 
-@dp.table(name="bronze.policy_event") 
+@dp.table(name="ageas.bronze_policy_event") 
 def policy_event():
     
     """
