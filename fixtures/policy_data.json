@@ -1,0 +1,138 @@
+[
+  {
+    "event_id": "evt_001",
+    "event_type": "policy_created",
+    "event_date": "2024-01-15",
+    "policy_id": "POL_001",
+    "customer_id": "CUST_001",
+    "customer_name": "John Smith",
+    "policy_type": "auto",
+    "premium_amount": 1500.00,
+    "start_date": "2024-01-15",
+    "end_date": "2025-01-15",
+    "status": "active"
+  },
+  {
+    "event_id": "evt_002",
+    "event_type": "renewal_sent",
+    "event_date": "2024-01-10",
+    "policy_id": "POL_001",
+    "customer_id": "CUST_001",
+    "renewal_date": "2024-01-10",
+    "renewal_premium": 1575.00,
+    "policy_type": "auto"
+  },
+  {
+    "event_id": "evt_003",
+    "event_type": "policy_created",
+    "event_date": "2024-02-20",
+    "policy_id": "POL_002",
+    "customer_id": "CUST_002",
+    "customer_name": "Jane Doe",
+    "policy_type": "home",
+    "premium_amount": 2500.00,
+    "start_date": "2024-02-20",
+    "end_date": "2025-02-20",
+    "status": "active"
+  },
+  {
+    "event_id": "evt_004",
+    "event_type": "policy_created",
+    "event_date": "2024-03-01",
+    "policy_id": "POL_003",
+    "customer_id": "CUST_001",
+    "customer_name": "John Smith",
+    "policy_type": "home",
+    "premium_amount": 2200.00,
+    "start_date": "2024-03-01",
+    "end_date": "2025-03-01",
+    "status": "active"
+  },
+  {
+    "event_id": "evt_005",
+    "event_type": "renewal_sent",
+    "event_date": "2024-02-15",
+    "policy_id": "POL_002",
+    "customer_id": "CUST_002",
+    "renewal_date": "2024-02-15",
+    "renewal_premium": 2650.00,
+    "policy_type": "home"
+  },
+  {
+    "event_id": "evt_006",
+    "event_type": "policy_created",
+    "event_date": "2024-04-10",
+    "policy_id": "POL_004",
+    "customer_id": "CUST_003",
+    "customer_name": "Bob Wilson",
+    "policy_type": "auto",
+    "premium_amount": 1800.00,
+    "start_date": "2024-04-10",
+    "end_date": "2025-04-10",
+    "status": "active"
+  },
+  {
+    "event_id": "evt_007",
+    "event_type": "renewal_sent",
+    "event_date": "2024-04-05",
+    "policy_id": "POL_003",
+    "customer_id": "CUST_001",
+    "renewal_date": "2024-04-05",
+    "renewal_premium": 2310.00,
+    "policy_type": "home"
+  },
+  {
+    "event_id": "evt_008",
+    "event_type": "policy_created",
+    "event_date": "2024-05-05",
+    "policy_id": "POL_005",
+    "customer_id": "CUST_004",
+    "customer_name": "Alice Johnson",
+    "policy_type": "life",
+    "premium_amount": 950.00,
+    "start_date": "2024-05-05",
+    "end_date": "2025-05-05",
+    "status": "active"
+  },
+  {
+    "event_id": "evt_009",
+    "event_type": "renewal_sent",
+    "event_date": "2024-04-05",
+    "policy_id": "POL_004",
+    "customer_id": "CUST_003",
+    "renewal_date": "2024-04-05",
+    "renewal_premium": 1890.00,
+    "policy_type": "auto"
+  },
+  {
+    "event_id": "evt_010",
+    "event_type": "policy_cancelled",
+    "event_date": "2024-06-01",
+    "policy_id": "POL_001",
+    "customer_id": "CUST_001",
+    "status": "cancelled"
+  },
+  {
+    "event_id": "evt_011",
+    "event_type": "renewal_sent",
+    "event_date": "2024-05-05",
+    "policy_id": "POL_005",
+    "customer_id": "CUST_004",
+    "renewal_date": "2024-05-05",
+    "renewal_premium": 1000.00,
+    "policy_type": "life"
+  },
+  {
+    "event_id": "evt_012",
+    "event_type": "policy_created",
+    "event_date": "2024-07-20",
+    "policy_id": "POL_006",
+    "customer_id": "CUST_005",
+    "customer_name": "Carol Davis",
+    "policy_type": "auto",
+    "premium_amount": 1650.00,
+    "start_date": "2024-07-20",
+    "end_date": "2025-07-20",
+    "status": "active"
+  }
+]
