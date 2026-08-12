@@ -94,11 +94,11 @@ def fact_policy():
     return policy_fact
 
 
-@dp.table(name="ageas.fact_event")
+@dp.table(name="ageas.gold_fact_event")
 def fact_event():
     df = spark.table("ageas.silver_policy_event")
-    dim_policy = spark.table("ageas.dim_policy_detail")
-    dim_customer = spark.table("ageas.dim_customer_detail")
+    dim_policy = spark.table("ageas.gold_dim_policy_detail")
+    dim_customer = spark.table("ageas.gold_dim_customer_detail")
 
     event_fact = (
         df.join(dim_policy, F.col("policy_id") == F.col("bk_policy_id"), "left")
