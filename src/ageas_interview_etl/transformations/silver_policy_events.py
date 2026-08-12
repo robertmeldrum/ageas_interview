@@ -13,6 +13,7 @@ from pyspark import pipelines as dp
 
 
 @dp.table(name="ageas.silver_policy_event")
+@dp.expect_or_drop("valid_coverage_amount", "coverage_amount > 0")
 def policy_event():
     """
     Description:
