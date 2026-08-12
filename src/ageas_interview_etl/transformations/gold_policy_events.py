@@ -78,8 +78,8 @@ def fact_policy():
         .join(dim_customer, df.customer_id == F.col("bk_customer_detail_id"), "left")  
         .withColumn("count", F.lit(1)) 
         .select(
-            "sk_policy_detail_id"
-            "sk_customer_detail_id"
+            "sk_policy_detail_id",
+            "sk_customer_detail_id",
             "premium_amount",
             "coverage_amount",
             "count",
