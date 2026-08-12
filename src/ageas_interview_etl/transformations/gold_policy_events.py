@@ -72,15 +72,28 @@ def fact_policy():
     dim_policy = spark.table("ageas.gold_dim_policy_detail")
     dim_customer = spark.table("ageas.gold_dim_customer_detail")
 
+
+    df_with_joined_fks = (
+        df.join(dim_policy, F.col("policy_id") == F.col("bk_policy_id"), "left")
+        .join(dim_customer, df.customer_id == F.col("bk_customer_detail_id"), "left")  
+        .withColumn(F.lit(1).alias("count")) 
+        .select(
+            "sk_policy_detail_id"
+            "sk_customer_detail_id"
+            "premium_amount",
+            "coverage_amount",
+            "count",
+            "policy_id"
+        )    
+    )
+    
     df_policy_fact = (
-        df.groupBy("policy_id")
+        df_with_joined_fks.groupBy("policy_id")
         .agg(
             F.first("premium_amount").alias("premium_amount"),
             F.first("coverage_amount").alias("coverage_amount"),
             F.lit(1).alias("count"),
         )
-        .join(dim_policy, F.col("policy_id") == F.col("bk_policy_id"), "left")
-        .join(dim_customer, df.customer_id == F.col("bk_customer_detail_id"), "left")
         .select(
             F.monotonically_increasing_id().alias("sk_policy_id"),
             "sk_policy_detail_id",
@@ -91,7 +104,7 @@ def fact_policy():
         )
     )
 
-    return policy_fact
+    return df_policy_fact
 
 
 @dp.table(name="ageas.gold_fact_event")
